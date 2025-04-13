@@ -1,0 +1,59 @@
+# Site settings
+title: "Siddhant's Portfolio"
+tagline: "QA | Automation | Business Analytics"
+description: "Professional portfolio of Siddhant – QA expert and Business Analyst with 10+ years' experience in automation, Agile, and analytics."
+
+url: "https://onegoodthing.github.io/"
+baseurl: ""  # leave blank for GitHub Pages
+
+lang: en
+timezone: Europe/Dublin
+
+# Author details
+author:
+  name: Siddhant
+  bio: >
+    QA and Business Analyst with 10+ years' experience in automation testing, Agile delivery, and data-driven solutions.
+  linkedin: https://www.linkedin.com/in/siddhantdhyani/
+  github: onegoodthing
+  location: Galway, Ireland
+
+# Theme
+theme: jekyll-theme-chirpy
+
+# Appearance
+theme_mode: auto  # options: light, dark, auto
+
+# Analytics (optional)
+google_analytics:
+  id: ""  # your GA tracking ID
+
+# Build settings
+markdown: kramdown
+kramdown:
+  input: GFM
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-archives
+  - jekyll-toc
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      author: Siddhant
+
+# Exclude files from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+
