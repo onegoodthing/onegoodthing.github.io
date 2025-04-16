@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Siddhant's Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-light: #f4f4f4;
+      --bg-dark: #121212;
+      --text-light: #121212;
+      --text-dark: #f4f4f4;
+      --accent: #4f46e5;
+      --card-bg-light: #ffffff;
+      --card-bg-dark: #1f1f1f;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      background-color: var(--bg-light);
+      color: var(--text-light);
+      transition: background 0.3s, color 0.3s;
+      scroll-behavior: smooth;
+    }
+
+    body.dark {
+      background-color: var(--bg-dark);
+      color: var(--text-dark);
+    }
+
+    header {
+      background-color: var(--accent);
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav a {
+      color: white;
+      margin-left: 1rem;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .toggle-btn {
+      background: white;
+      color: var(--accent);
+      border: none;
+      padding: 0.4rem 0.8rem;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    main {
+      max-width: 960px;
+      margin: auto;
+      padding: 2rem;
+    }
+
+    section {
+      margin-bottom: 3rem;
+    }
+
+    h1, h2 {
+      margin-bottom: 0.5rem;
+    }
+
+    ul {
+      padding-left: 1.5rem;
+    }
+
+    a {
+      color: var(--accent);
+    }
+
+    blockquote {
+      border-left: 4px solid var(--accent);
+      padding-left: 1rem;
+      margin-top: 2rem;
+      font-style: italic;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background-color: var(--card-bg-light);
+      border-radius: 12px;
+      padding: 1.2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .dark .card {
+      background-color: var(--card-bg-dark);
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    }
+
+    .card h3 {
+      margin-top: 0;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div><strong>Siddhant</strong></div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+      <button class="toggle-btn" onclick="toggleTheme()">☀️/🌙</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="about" class="fade-in">
+      <h1>👋 Hi, I'm Siddhant</h1>
+      <p>
+        I’m a QA and Business Analyst with over 10 years of experience in <strong>automation testing</strong>, <strong>Agile methodologies</strong>, and <strong>data analytics</strong>. My background spans across financial services, consulting, and technology sectors.
+      </p>
+    </section>
+
+    <section id="skills" class="fade-in">
+      <h2>🔧 Skills & Tools</h2>
+      <ul>
+        <li><strong>Languages</strong>: Java, Python, SQL</li>
+        <li><strong>Automation Tools</strong>: Selenium, Playwright, JUnit, TestNG</li>
+        <li><strong>CI/CD</strong>: Jenkins, Git, GitHub Actions</li>
+        <li><strong>Databases</strong>: MySQL, Oracle</li>
+        <li><strong>Agile & Management</strong>: Scrum, JIRA, Confluence, CSPO Certified</li>
+      </ul>
+    </section>
+
+    <section id="projects" class="fade-in">
+      <h2>🚀 Projects</h2>
+      <div class="projects">
+        <div class="card">
+          <h3>Automation Framework</h3>
+          <p>A scalable Selenium + TestNG framework with page object model, reporting, and Jenkins integration.</p>
+        </div>
+        <div class="card">
+          <h3>Data Analytics Dashboard</h3>
+          <p>Interactive dashboard built using Python and SQL to monitor financial KPIs and generate insights.</p>
+        </div>
+        <div class="card">
+          <h3>Playwright Test Suite</h3>
+          <p>End-to-end UI automation using Playwright for robust web testing across browsers.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="fade-in">
+      <h2>📜 Certifications</h2>
+      <ul>
+        <li>Certified Scrum Product Owner (CSPO) – Scrum Alliance</li>
+      </ul>
+
+      <h2>🎓 Education</h2>
+      <ul>
+        <li>Masters in Business Analytics – University of Galway, Ireland</li>
+        <li>B.Tech in Information Technology – Graphic Era University, India</li>
+      </ul>
+    </section>
+
+    <section id="contact" class="fade-in">
+      <h2>📫 Let's Connect</h2>
+      <ul>
+        <li><strong>LinkedIn</strong>: <a href="https://www.linkedin.com/in/siddhantdhyani/" target="_blank">linkedin.com/in/siddhantdhyani</a></li>
+      </ul>
+
+      <blockquote>
+        “Quality means doing it right when no one is looking.” – Henry Ford
+      </blockquote>
+    </section>
+  </main>
+
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle("dark");
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    document.querySelectorAll('.fade-in').forEach(section => {
+      observer.observe(section);
+    });
+  </script>
+</body>
+</html>
