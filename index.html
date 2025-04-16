@@ -3,224 +3,179 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Siddhant's Portfolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <title>Siddhant | Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-light: #f4f4f4;
-      --bg-dark: #121212;
-      --text-light: #121212;
-      --text-dark: #f4f4f4;
       --accent: #4f46e5;
-      --card-bg-light: #ffffff;
-      --card-bg-dark: #1f1f1f;
+      --bg-light: #f9f9fb;
+      --card-bg: #ffffff;
+      --text-dark: #1e1e1e;
     }
 
     body {
       font-family: 'Inter', sans-serif;
-      margin: 0;
-      background-color: var(--bg-light);
-      color: var(--text-light);
-      transition: background 0.3s, color 0.3s;
-      scroll-behavior: smooth;
-    }
-
-    body.dark {
-      background-color: var(--bg-dark);
+      background: var(--bg-light);
       color: var(--text-dark);
+      margin: 0;
+      padding: 0;
     }
 
-    header {
-      background-color: var(--accent);
-      color: white;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-
-    nav a {
-      color: white;
-      margin-left: 1rem;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    .toggle-btn {
-      background: white;
-      color: var(--accent);
-      border: none;
-      padding: 0.4rem 0.8rem;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-
-    main {
-      max-width: 960px;
+    header, section {
+      padding: 3rem 1.5rem;
+      max-width: 1000px;
       margin: auto;
-      padding: 2rem;
     }
 
-    section {
-      margin-bottom: 3rem;
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
     }
 
-    h1, h2 {
-      margin-bottom: 0.5rem;
+    .hero img {
+      max-width: 320px;
+      margin-top: 2rem;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      max-width: 600px;
+    }
+
+    .btn {
+      background: var(--accent);
+      color: white;
+      padding: 0.7rem 1.5rem;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 1rem;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      text-align: center;
     }
 
     ul {
-      padding-left: 1.5rem;
+      list-style: none;
+      padding-left: 0;
+      line-height: 1.7;
     }
 
-    a {
+    ul li::before {
+      content: "• ";
       color: var(--accent);
     }
 
-    blockquote {
-      border-left: 4px solid var(--accent);
-      padding-left: 1rem;
-      margin-top: 2rem;
-      font-style: italic;
-    }
-
-    .projects {
+    .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 1.5rem;
     }
 
     .card {
-      background-color: var(--card-bg-light);
+      background: var(--card-bg);
       border-radius: 12px;
-      padding: 1.2rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .dark .card {
-      background-color: var(--card-bg-dark);
+      padding: 1.5rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
     }
 
-    .card h3 {
-      margin-top: 0;
+    .card img {
+      max-width: 100%;
+      border-radius: 6px;
+      margin-bottom: 1rem;
     }
 
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.95rem;
     }
 
-    .fade-in.visible {
-      opacity: 1;
-      transform: none;
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <div><strong>Siddhant</strong></div>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-      <button class="toggle-btn" onclick="toggleTheme()">☀️/🌙</button>
-    </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <h1>👋 Hi, I'm Siddhant</h1>
+    <p>QA and Business Analyst with 10+ years in automation, Agile, and data analytics.<br>
+      Passionate about quality engineering and business impact.</p>
+    <a class="btn" href="#contact">Contact Me</a>
+    <img src="images/hero-illustration.svg" alt="Hero Illustration" />
   </header>
 
-  <main>
- <section id="hero" style="text-align:center; padding: 3rem 1rem; background: url('hero-banner.png') no-repeat center/cover;">
-  <h1 style="font-size: 2.5rem; color: white;">👋 Hi, I'm Siddhant</h1>
-  <p style="max-width: 600px; margin: 1rem auto; color: white;">
-    QA and Business Analyst with 10+ years in automation, Agile, and data analytics.
-  </p>
-  <a href="#contact" style="background: #4f46e5; color: white; padding: 0.75rem 1.5rem; border-radius: 6px; text-decoration: none;">Contact Me</a>
-</section>
+  <!-- Skills Section -->
+  <section id="skills">
+    <h2 class="section-title">🛠️ Skills & Tools</h2>
+    <ul>
+      <li><strong>Languages:</strong> Java, Python, SQL</li>
+      <li><strong>Automation Tools:</strong> Selenium, Playwright, JUnit, TestNG</li>
+      <li><strong>CI/CD:</strong> Jenkins, Git, GitHub Actions</li>
+      <li><strong>Databases:</strong> MySQL, Oracle</li>
+      <li><strong>Agile & Management:</strong> Scrum, JIRA, Confluence, CSPO Certified</li>
+    </ul>
+  </section>
 
-    <section id="skills" class="fade-in">
-      <h2>🔧 Skills & Tools</h2>
-      <ul>
-        <li><strong>Languages</strong>: Java, Python, SQL</li>
-        <li><strong>Automation Tools</strong>: Selenium, Playwright, JUnit, TestNG</li>
-        <li><strong>CI/CD</strong>: Jenkins, Git, GitHub Actions</li>
-        <li><strong>Databases</strong>: MySQL, Oracle</li>
-        <li><strong>Agile & Management</strong>: Scrum, JIRA, Confluence, CSPO Certified</li>
-      </ul>
-    </section>
-
-    <section id="projects" class="fade-in">
-      <h2>🚀 Projects</h2>
-      <div class="projects">
-        <div class="card">
-          <h3>Automation Framework</h3>
-          <p>A scalable Selenium + TestNG framework with page object model, reporting, and Jenkins integration.</p>
-        </div>
-        <div class="card">
-          <h3>Data Analytics Dashboard</h3>
-          <p>Interactive dashboard built using Python and SQL to monitor financial KPIs and generate insights.</p>
-        </div>
-        <div class="card">
-          <h3>Playwright Test Suite</h3>
-          <p>End-to-end UI automation using Playwright for robust web testing across browsers.</p>
-        </div>
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2 class="section-title">🚀 Projects</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="images/automation-framework.png" alt="Automation Tools">
+        <h3>Automation Framework</h3>
+        <p>Selenium + TestNG framework with modular design and CI/CD integration using Jenkins.</p>
       </div>
-    </section>
+      <div class="card">
+        <img src="images/data-dashboard.png" alt="Data Analytics">
+        <h3>Data Analytics Dashboard</h3>
+        <p>Interactive dashboard using Python and SQL to monitor and visualize financial KPIs.</p>
+      </div>
+      <div class="card">
+        <img src="images/playwright-tests.png" alt="Playwright UI Tests">
+        <h3>Playwright Test Suite</h3>
+        <p>End-to-end UI automation suite built using Playwright for efficient browser testing.</p>
+      </div>
+    </div>
+  </section>
 
-    <section class="fade-in">
-      <h2>📜 Certifications</h2>
-      <ul>
-        <li>Certified Scrum Product Owner (CSPO) – Scrum Alliance</li>
-      </ul>
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2 class="section-title">📫 Contact Me</h2>
+    <form action="https://formspree.io/f/your-form-endpoint" method="POST" style="max-width: 500px; margin: auto; display: flex; flex-direction: column; gap: 1rem;">
+      <input type="text" name="name" placeholder="Your Name" required style="padding: 0.6rem; border-radius: 6px; border: 1px solid #ccc;">
+      <input type="email" name="email" placeholder="Your Email" required style="padding: 0.6rem; border-radius: 6px; border: 1px solid #ccc;">
+      <textarea name="message" placeholder="Your Message" rows="5" required style="padding: 0.6rem; border-radius: 6px; border: 1px solid #ccc;"></textarea>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+  </section>
 
-      <h2>🎓 Education</h2>
-      <ul>
-        <li>Masters in Business Analytics – University of Galway, Ireland</li>
-        <li>B.Tech in Information Technology – Graphic Era University, India</li>
-      </ul>
-    </section>
-
-    <section id="contact" class="fade-in">
-      <h2>📫 Let's Connect</h2>
-      <ul>
-        <li><strong>LinkedIn</strong>: <a href="https://www.linkedin.com/in/siddhantdhyani/" target="_blank">linkedin.com/in/siddhantdhyani</a></li>
-      </ul>
-
-      <blockquote>
-        “Quality means doing it right when no one is looking.” – Henry Ford
-      </blockquote>
-    </section>
-  </main>
-
-  <script>
-    function toggleTheme() {
-      document.body.classList.toggle("dark");
-    }
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, {
-      threshold: 0.1
-    });
-
-    document.querySelectorAll('.fade-in').forEach(section => {
-      observer.observe(section);
-    });
-  </script>
- 
+  <!-- Footer -->
+  <footer>
+    <p>“Quality means doing it right when no one is looking.” – Henry Ford</p>
+    <p>Connect on <a href="https://linkedin.com/in/siddhantdhyani" target="_blank">LinkedIn</a></p>
+  </footer>
 </body>
 </html>
