@@ -114,18 +114,65 @@
         font-size: 2rem;
       }
     }
+    .hero {
+  background: url('images/hero-banner.png') no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  padding: 0 1rem;
+  position: relative;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5); /* Optional: dark overlay for contrast */
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  background: var(--accent);
+  color: white;
+  padding: 0.7rem 1.5rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  text-decoration: none;
+  display: inline-block;
+}
+
   </style>
 </head>
 <body>
 
   <!-- Hero Section -->
-  <header class="hero">
+ <header class="hero">
+  <div class="hero-content">
     <h1>👋 Hi, I'm Siddhant</h1>
     <p>QA and Business Analyst with 10+ years in automation, Agile, and data analytics.<br>
       Passionate about quality engineering and business impact.</p>
     <a class="btn" href="#contact">Contact Me</a>
-    <img src="images/hero-banner.png" alt="hero-banner" />
-  </header>
+  </div>
+</header>
 
   <!-- Skills Section -->
   <section id="skills">
