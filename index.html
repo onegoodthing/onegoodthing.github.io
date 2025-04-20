@@ -127,16 +127,9 @@ section {
   margin-bottom: 2rem;
 }
 
-.btn {
-  background: var(--accent);
-  color: white;
-  padding: 0.7rem 1.5rem;
-  border-radius: 6px;
-  font-size: 1rem;
-  text-decoration: none;
-  display: inline-block;
+html {
+  scroll-behavior: smooth;
 }
-
   </style>
 </head>
 <body>
@@ -149,7 +142,13 @@ section {
     Passionate about quality engineering and business impact.</p>
     <a class="btn" href="#contact">Contact Me</a>
   </div>
+   <div style="position:absolute; bottom: 30px; text-align:center; width:100%;">
+  <a href="#skills" style="color:white; font-size: 2rem; text-decoration: none;">↓</a>
+</div>
+
 </header>
+<!-- Spacer to ensure full hero view before scrolling -->
+<div style="height: 100vh;"></div>
 
   <!-- Skills Section -->
   <section id="skills">
