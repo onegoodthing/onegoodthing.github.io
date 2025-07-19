@@ -84,8 +84,7 @@
     <button onclick="increaseFont()" class="px-2 py-1 bg-gray-200 rounded hover:bg-gray-300" aria-label="Increase font size">A+</button>
     <button onclick="decreaseFont()" class="px-2 py-1 bg-gray-200 rounded hover:bg-gray-300" aria-label="Decrease font size">A-</button>
     <button onclick="toggleContrast()" class="px-2 py-1 bg-gray-200 rounded hover:bg-gray-300" aria-label="Toggle high contrast">🌓</button>
-    <button onclick="readText()" class="px-2 py-1 bg-gray-200 rounded hover:bg-gray-300" aria-label="Read page text">🔊</button>
-  </div>
+   </div>
       </div>
     </div>
   </header>
@@ -546,7 +545,7 @@
       © <span id="year"></span> Siddhant Dhyani. All rights reserved.
     </div>
      <section class="mt-6 text-sm text-gray-500 text-center">
-      <p>This site includes accessibility features such as font resizing, high contrast mode, and text-to-speech support.</p>
+      <p>This site includes accessibility features such as font resizing and high contrast mode support.</p>
     </section>
   </footer>
 
@@ -568,11 +567,7 @@
       document.body.classList.toggle('high-contrast');
     }
 
-    function readText() {
-      const text = document.body.innerText;
-      const utterance = new SpeechSynthesisUtterance(text);
-      speechSynthesis.speak(utterance);
-    }
+   
   </script>
 </body>
 </html>
